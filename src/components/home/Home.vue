@@ -17,7 +17,7 @@
         <div :class="botItemClassStyle" class="list-bot">
             <p class="title">Favorities</p>
             <ul class="row">                
-                <li :class="botColStyle" v-for="bot of filteredFavoriteBots" :key="bot">      
+                <li :class="botColStyle" v-for="(bot, index) of filteredFavoriteBots" :key="index">      
                         <img class="favorite-icon" :src="imgStar" @click="isFavorite(bot)">
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
@@ -27,7 +27,7 @@
 
                 </li>       
                 <p class="line"></p>  
-                <li :class="botColStyle" v-for="bot of filteredNotFavoriteBots" :key="bot" >      
+                <li :class="botColStyle" v-for="(bot, index) of filteredNotFavoriteBots" :key="'F'+index" >      
                         <img class="favorite-icon" :src="imgNotFavorite" @click="isFavorite(bot)">
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
