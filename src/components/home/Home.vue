@@ -17,17 +17,25 @@
         <div :class="botItemClassStyle" class="list-bot">
             <p class="title">Favorities</p>
             <ul class="row">                
-                <li :class="botColStyle" v-for="bot of filteredBots" :key="bot">      
-                        <div v-for="img in imgs" :key="img">
-                            <img class="favorite-icon" :src="img" @click="changePath($event)">
-                        </div>              
+                <li :class="botColStyle" v-for="bot of filteredFavoriteBots" :key="bot" v-show="bot.template === 'favorite'">      
+                        <img class="favorite-icon" :src="imgStar" @click="isFavorite(bot)">
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
                         </router-link>
                         <p class="bot-name">{{ bot.name }}</p>
                         <p class="bot-date">{{ bot.created.substr(0, 10).split('-').reverse().join('/') }}</p>
 
-                </li>               
+                </li>       
+                <p class="line"></p>  
+                <li :class="botColStyle" v-for="bot of filteredNotFavoriteBots" :key="bot" v-show="bot.template === 'master'">      
+                        <img class="favorite-icon" :src="imgNotFavorite" @click="isFavorite(bot)">
+                        <router-link :to="'details/'+bot.shortName">
+                            <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
+                        </router-link>
+                        <p class="bot-name">{{ bot.name }}</p>
+                        <p class="bot-date">{{ bot.created.substr(0, 10).split('-').reverse().join('/') }}</p>
+
+                </li>                       
             </ul>         
         </div>
         <div class="add-bot">
@@ -68,15 +76,18 @@ export default {
             botItemClassStyle: 'card-bot-item',
             routes,
             botColStyle: 'col-xl-2',            
-            imgPath1: require('../../assets/images/favorite.png'),
-            imgPath2: require('../../assets/images/star.png'),
-            imgs: [require('../../assets/images/favorite.png')],
+            imgNotFavorite: require('../../assets/images/favorite.png'),
+            imgStar: require('../../assets/images/star.png')        
         }  
     },
     methods:{
-        changePath(event){
-            let newPath = event.target.getAttribute("src") === this.imgPath1 ? this.imgPath2 : this.imgPath1;
-            event.target.src = newPath;
+        isFavorite(bot){
+            if(bot.template == 'master'){
+                bot.template = 'favorite';
+            }else{
+                bot.template = 'master';
+            }
+            
         },
         mounted() {
             this.imgs = Array(3).fill(this.imgPath1);
@@ -94,17 +105,25 @@ export default {
         },
         orderByCreation(){
             return this.bots.sort((t1,t2) => t1.created < t2.created ? -1 : 1);
-        },                            
+        }                                    
     },
     computed:{
-        filteredBots(){
+        filteredFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
                 return this.bots.filter(bot => exp.test(bot.shortName));
             }else{
                 return this.bots;
             }
-        }       
+        },
+        filteredNotFavoriteBots(){
+            if(this.filter){
+                let exp = new RegExp(this.filter.trim(), 'i');
+                return this.bots.filter(bot => exp.test(bot.shortName));
+            }else{
+                return this.bots;
+            }
+        }          
     },
 }
 </script>
