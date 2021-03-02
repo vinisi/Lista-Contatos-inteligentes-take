@@ -17,7 +17,7 @@
         <div :class="botItemClassStyle" class="list-bot">
             <p class="title">Favorities</p>
             <ul class="row">                
-                <li :class="botColStyle" v-for="bot of filteredFavoriteBots" :key="bot" v-show="bot.template === 'favorite'">      
+                <li :class="botColStyle" v-for="bot of filteredFavoriteBots" :key="bot">      
                         <img class="favorite-icon" :src="imgStar" @click="isFavorite(bot)">
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
@@ -27,7 +27,7 @@
 
                 </li>       
                 <p class="line"></p>  
-                <li :class="botColStyle" v-for="bot of filteredNotFavoriteBots" :key="bot" v-show="bot.template === 'master'">      
+                <li :class="botColStyle" v-for="bot of filteredNotFavoriteBots" :key="bot" >      
                         <img class="favorite-icon" :src="imgNotFavorite" @click="isFavorite(bot)">
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
@@ -111,17 +111,19 @@ export default {
         filteredFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
-                return this.bots.filter(bot => exp.test(bot.shortName));
+                let filtered = this.bots.filter(bot => exp.test(bot.shortName));
+                return filtered.filter(bot => bot.template === 'favorite');
             }else{
-                return this.bots;
+                return this.bots.filter(bot => bot.template === 'favorite');
             }
         },
         filteredNotFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
-                return this.bots.filter(bot => exp.test(bot.shortName));
+                let filtered = this.bots.filter(bot => exp.test(bot.shortName));
+                return filtered.filter(bot => bot.template === 'master');
             }else{
-                return this.bots;
+                return this.bots.filter(bot => bot.template === 'master');
             }
         }          
     },
