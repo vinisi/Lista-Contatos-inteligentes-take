@@ -43,15 +43,12 @@
 </template>
 
 <script>
-
-import Top from '../../components/shared/Top';
 import json from '../../assets/resources/data.json';
 import Image from '../shared/Image';
 
 
 export default{ 
     components:{
-        'my-top': Top,
         'my-image': Image,
     },
     data(){
@@ -76,6 +73,8 @@ export default{
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
                 return this.bots.filter(bot => exp.test(bot.shortName));
+            }else{
+                return []
             }
         },
     },

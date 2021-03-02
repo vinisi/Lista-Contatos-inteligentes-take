@@ -17,9 +17,9 @@
         <div :class="botItemClassStyle" class="list-bot">
             <p class="title">Favorities</p>
             <ul class="row">                
-                <li :class="botColStyle" v-for="bot of filteredBots" >      
-                        <div v-for="(img, i) in imgs">
-                            <img class="favorite-icon" :src="img" @click="changePath($event, img, i)">
+                <li :class="botColStyle" v-for="bot of filteredBots" :key="bot">      
+                        <div v-for="img in imgs" :key="img">
+                            <img class="favorite-icon" :src="img" @click="changePath($event)">
                         </div>              
                         <router-link :to="'details/'+bot.shortName">
                             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
@@ -38,18 +38,13 @@
 
 <script>
 
-import  Button from '../shared/Button';
 import Image from '../shared/Image';
 import json from '../../assets/resources/data.json';
-import Top from '../shared/Top';
 import { routes } from '../../routes';
 
 export default {  
-
     components:{
-        'my-button': Button,
         'my-image': Image,
-        'my-top': Top
     },
     data () {
         return {
@@ -75,11 +70,11 @@ export default {
             botColStyle: 'col-xl-2',            
             imgPath1: require('../../assets/images/favorite.png'),
             imgPath2: require('../../assets/images/star.png'),
-            imgs: [require('../../assets/images/favorite.png')]            
+            imgs: [require('../../assets/images/favorite.png')],
         }  
     },
     methods:{
-        changePath(event, img, index){
+        changePath(event){
             let newPath = event.target.getAttribute("src") === this.imgPath1 ? this.imgPath2 : this.imgPath1;
             event.target.src = newPath;
         },
