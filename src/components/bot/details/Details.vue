@@ -37,15 +37,16 @@
                 <p class="title">Free</p>
                 <button :type="buttonType"  :class="buttonStyle" >{{ buttonUpdate }}</button>            
             </div> 
-        </div>                                    
+        </div>       
+        <div class="line"></div>                             
     </div>
 
 </template>
 
 <script>
 
-import json from '../../assets/resources/data.json';
-import Image from '../shared/Image';
+import json from '../../../assets/resources/data.json';
+import Image from '../../shared/image/Image';
 
 
 export default{ 
@@ -56,13 +57,13 @@ export default{
         return{
             bots: json,
             filter: '',
-            imageUserSrc: require('../../assets/images/user.png'),
+            imageUserSrc: require('../../../assets/images/user.png'),
             imageUserAlt: 'Usuários ativos',
-            imageReceivedSrc: require('../../assets/images/sent.png'),
+            imageReceivedSrc: require('../../../assets/images/sent.png'),
             imageReceivedAlt: 'Usuários ativos',
-            imageSentSrc: require('../../assets/images/sent.png'),
+            imageSentSrc: require('../../../assets/images/sent.png'),
             imageSentAlt: 'Usuários ativos',                        
-            imageStatusAccSrc: require('../../assets/images/plano.png'),
+            imageStatusAccSrc: require('../../../assets/images/plano.png'),
             imageStatusAccAlt: 'Usuários ativos',
             buttonType: 'submit',
             buttonStyle: 'btn',

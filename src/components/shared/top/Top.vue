@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import Image from './Image';
+
+import Image from '../image/Image';
 
 export default {  
     components:{
@@ -16,7 +17,7 @@ export default {
   data () {
     return {
         classStyle: '.top',
-        src: require('../../assets/images/logo.png'),
+        src: require('../../../assets/images/logo.png'),
         alt: 'Logo Take Blip'
     }
   }      

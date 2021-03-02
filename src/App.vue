@@ -12,8 +12,8 @@
 
 <script>
 import { routes } from './routes';
-import Top from './components/shared/Top';
-import Footer from './components/shared/Footer';
+import Top from './components/shared/top/Top';
+import Footer from './components/shared/footer/Footer';
 
 export default {
     components:{        

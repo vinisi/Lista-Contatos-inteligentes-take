@@ -14,27 +14,21 @@
                 </div>
             </div>
         </div>
-        <div :class="botItemClassStyle" class="list-bot">
+        <div class="list-bot">
             <p class="title">Favorities</p>
-            <ul class="row">                
-                <li :class="botColStyle" v-for="(bot, index) of filteredFavoriteBots" :key="index">      
-                        <img class="favorite-icon" :src="imgStar" @click="isFavorite(bot)">
-                        <router-link :to="'details/'+bot.shortName">
-                            <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
-                        </router-link>
-                        <p class="bot-name">{{ bot.name }}</p>
-                        <p class="bot-date">{{ bot.created.substr(0, 10).split('-').reverse().join('/') }}</p>
-
+            <ul :class="botItemClassStyle" class="row">                
+                <li :class="botColStyle" v-for="(bot, index) of filteredFavoriteBots" :key="'F'+index">      
+                    <my-bot 
+                        :bot="bot"
+                        :src="imgStar"
+                    />
                 </li>       
                 <p class="line"></p>  
-                <li :class="botColStyle" v-for="(bot, index) of filteredNotFavoriteBots" :key="'F'+index" >      
-                        <img class="favorite-icon" :src="imgNotFavorite" @click="isFavorite(bot)">
-                        <router-link :to="'details/'+bot.shortName">
-                            <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
-                        </router-link>
-                        <p class="bot-name">{{ bot.name }}</p>
-                        <p class="bot-date">{{ bot.created.substr(0, 10).split('-').reverse().join('/') }}</p>
-
+                <li :class="botColStyle" v-for="(bot, index) of filteredNotFavoriteBots" :key="index" >      
+                    <my-bot 
+                        :bot="bot"
+                        :src="imgNotFavorite"
+                    />
                 </li>                       
             </ul>         
         </div>
@@ -46,13 +40,15 @@
 
 <script>
 
-import Image from '../shared/Image';
+import Image from '../shared/image/Image';
 import json from '../../assets/resources/data.json';
+import botCard from '../../components/bot/Bot-card';
 import { routes } from '../../routes';
 
 export default {  
     components:{
         'my-image': Image,
+        'my-bot': botCard,
     },
     data () {
         return {
@@ -75,9 +71,9 @@ export default {
             bots: json,
             botItemClassStyle: 'card-bot-item',
             routes,
-            botColStyle: 'col-xl-2',            
+            botColStyle: 'col-xl-2',
             imgNotFavorite: require('../../assets/images/favorite.png'),
-            imgStar: require('../../assets/images/star.png')        
+            imgStar: require('../../assets/images/star.png')                
         }  
     },
     methods:{
@@ -88,10 +84,7 @@ export default {
                 bot.template = 'master';
             }
             
-        },
-        mounted() {
-            this.imgs = Array(3).fill(this.imgPath1);
-        },        
+        },     
         showCard(){
             this.botItemClassStyle = 'card-bot-item';
             this.botColStyle = 'col-xl-2';

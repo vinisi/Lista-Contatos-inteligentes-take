@@ -1,5 +1,5 @@
 import Home from './components/home/Home.vue';
-import Details from './components/details/Details.vue';
+import Details from './components/bot/details/Details.vue';
 
 
 export const routes = [
@@ -9,7 +9,7 @@ export const routes = [
         title: 'Home'
     },
     {
-        path: '/Details/:id', 
+        path: '/Details/details/:id', 
         component: Details, 
         title: 'Details',
         props: (route) => ({

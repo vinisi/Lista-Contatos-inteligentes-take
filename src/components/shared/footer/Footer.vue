@@ -11,9 +11,6 @@ export default {
 }
 </script>
 
-<style>
-.footer{
-    text-align: center;
-    padding: 10px 0;
-}
+<style lang="scss" src="./style.scss" scoped>
+
 </style>
