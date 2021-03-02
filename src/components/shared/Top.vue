@@ -1,0 +1,28 @@
+<template>    
+        <div class="top">
+            <router-link :to="'/'">
+              <my-image :classStyle="classStyle" :src="src" :alt="alt"/>
+            </router-link>
+        </div>
+</template>
+
+<script>
+import Image from './Image';
+
+export default {  
+    components:{
+        'my-image': Image
+    },
+  data () {
+    return {
+        classStyle: '.top',
+        src: require('../../assets/images/logo.png'),
+        alt: 'Logo Take Blip'
+    }
+  }      
+}
+</script>
+
+<style lang="scss" src="./style.scss" scoped>
+
+</style>

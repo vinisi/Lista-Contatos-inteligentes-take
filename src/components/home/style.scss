@@ -1,0 +1,166 @@
+@import "@/../../../assets/scss/_colors.scss";
+@import "@/../../../assets/scss/_default.scss";
+
+.home{
+    min-height: 600px;
+     .header{
+        padding: 30px 50px;
+        .title{
+            color: $titleColor; 
+            font-size: 26px;
+            font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .input{        
+            padding: .50rem 1rem;
+            color: $titleColor;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid $titleColor;
+            border-radius: .40rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;       
+            border-color: #ebedf2;
+        }
+
+    
+        .imageStyle{
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    } 
+
+     .list-bot.card-bot-item{
+        padding: 30px 50px;
+        .title{
+            color: $subtitleColor; 
+            font-size: 26px;
+            font-weight: bold;
+            width: 50%;
+            display: inline-block;
+            vertical-align: middle;       
+            margin: 10px 0; 
+        }
+        .favorite-icon{
+            position: relative;
+            left: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+        ul{
+            li{
+                background-color: $whiteColor;
+                height: 200px;
+                margin: 3px;
+                border-radius: 5px;
+                
+                box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+                
+            }
+        }
+        a{
+            display: block;
+            margin: 0 auto;
+            width: 75px;     
+        }
+        .bot-img{
+            border-radius: 100%;
+            height: 75px;
+            width: 75px;        
+        }
+        .bot-name{
+            margin: 15px auto;
+            text-align: center;
+            font-weight: bold;
+            color: $titleColor;
+        }
+        .bot-date{
+            margin: 5px auto;
+            text-align: center;           
+            color: $titleColor;    
+            font-size: 12px;;       
+        }
+
+        .line{
+            width: 100%;
+            border-bottom: 2px solid $subtitleColor;
+            margin: 40px 0;
+        }
+    }
+
+    .list-bot.list-bot-item{
+        padding: 30px 50px;
+        .title{
+            color: $subtitleColor; 
+            font-size: 26px;
+            font-weight: bold;
+            width: 50%;
+            display: inline-block;
+            vertical-align: middle;       
+            margin: 10px 0; 
+        }
+        .favorite-icon{
+            display: block;
+            float: left;
+            position: relative;
+            top: 27px;
+            left: -65px;
+            cursor: pointer;
+        }
+        ul{
+            li{
+                background-color: $whiteColor;
+                height: 75px;
+                margin: 8px;
+                border-radius: 5px;
+                margin-left: 105px;
+                box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+                
+            }                        
+        }
+        a{
+            display: block;
+            float: left;
+            margin: 10px auto;
+        }
+        .bot-img{
+            border-radius: 100%;
+            height: 55px;
+            width: 55px; 
+            display: block;
+        }
+        .bot-name{
+            font-weight: bold;
+            color: $titleColor;
+            float: left;
+            margin: 30px;
+        }
+        .bot-date{        
+            color: $titleColor;    
+            font-size: 12px;
+            float: right;  
+            margin: 30px;  
+        }     
+    }
+
+    .add-bot {
+        display: block;
+        background: $btnColor;
+        box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        cursor: pointer;
+        text-align: center;
+        padding-top: 9px;
+        z-index: 110;
+        border-radius: 100%;
+    } 
+    .add-bot:hover{
+        border-color: $btnHoverColor;
+        background-color: $btnHoverColor;         
+    }     
+}

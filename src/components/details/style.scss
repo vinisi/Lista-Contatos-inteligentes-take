@@ -1,0 +1,134 @@
+@import "@/../../../assets/scss/_colors.scss";
+@import "@/../../../assets/scss/_default.scss";
+
+.details{
+    padding: 30px 50px;
+    min-height: 600px;
+    background-color: $bgColor;
+    .header{
+        
+        .bot-img{
+            border-radius: 100%;
+            height: 55px;
+            width: 55px; 
+            display: block;
+            float: left;
+        }        
+        .bot-name{
+            font-weight: bold;
+            color: $titleColor;
+            display: block;
+            float: left;
+            margin: 11px            
+
+        }
+        .bot-date{        
+            color: $titleColor;    
+            font-size: 12px;
+            display: block;
+            float: right;
+            margin-top: 25px;
+        }  
+        .bot-id{        
+            color: $titleColor;    
+            font-size: 12px;
+            position: relative;
+            top: 50px;
+            left: 70px;
+        }               
+    }
+    .box-local,  .box-actived-user,  .box-msg-receveid,  .box-msg-sent{
+        background-color: $whiteColor;
+        box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+        height: 140px;
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+    .box-local{
+        color: $titleColor; 
+        font-size: 12px;
+        text-align: left;
+        padding-top: 10px;
+        p{
+            padding: 5px 0;
+        }
+    }
+
+    .box-actived-user, .box-msg-receveid, .box-msg-sent{
+        img{
+            background-color: $btnColor;
+            border-radius: 100%;
+            padding: 10px;
+            display: inline-block;     
+            margin: 43px 20px; 
+        }
+        .title{
+            color: $titleColor; 
+            font-size: 26px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 57px 0;
+            font-weight: bold;
+        }
+        .subtitle{
+            color: $subtitleColor; 
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 43px 0;
+            margin: 86px -17px;
+            font-weight: bold;
+        }        
+    }
+
+    .box-msg-receveid{
+        img{
+            background-color: #4dcb7b;
+        }
+        .subtitle{
+            margin: 86px -70px;
+        }
+    } 
+    
+    .box-msg-sent{
+        img{
+            background-color: #517bf2;
+        }
+        .subtitle{
+            margin: 86px -70px;
+        }
+    }
+
+    .box-status-account{
+        position: relative;
+        top: -175px;
+        left: 35px;
+
+        .btn{
+            position: relative;
+            top: 15px;
+            left: 55px;
+        }
+
+        .title{
+            color: $titleColor; 
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            width: 224px;
+            margin: 10px 0;
+
+        }
+
+        .subtitle{
+            color: $subtitleColor; 
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 224px;
+            
+        }        
+
+    }
+}
