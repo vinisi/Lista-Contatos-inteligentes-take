@@ -1,7 +1,7 @@
 <template>
     <div class="details">
         <div class="row">        
-            <div class="header col-xl-12">   
+            <div class="header">   
                 <div class="bot-id">
                     id: {{ filter = $route.params.id}}
                 </div>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+
 import json from '../../assets/resources/data.json';
 import Image from '../shared/Image';
 
@@ -74,7 +75,7 @@ export default{
                 let exp = new RegExp(this.filter.trim(), 'i');
                 return this.bots.filter(bot => exp.test(bot.shortName));
             }else{
-                return []
+                return [];
             }
         },
     },
