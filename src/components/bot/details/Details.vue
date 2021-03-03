@@ -1,15 +1,16 @@
 <template>
-    <div class="details">
-        <div class="row">        
-            <div class="header">   
-                <div class="bot-id">
-                    id: {{ filter = $route.params.id}}
-                </div>
-                <my-image class="bot-img" :src="filteredBot[0].image" :alt="filteredBot[0].description"/>        
-                <p class="bot-name">{{filteredBot[0].name}}</p>          
-                <p class="bot-date">Created at {{ filteredBot[0].created.substr(0, 10).split('-').reverse().join('/') }}</p>   
+    <div class="details">        
+        <div class="header">   
+            <div class="bot-id">
+                id: {{ filter = $route.params.id}}
             </div>
-            <div class="line"></div>
+            <my-image class="bot-img" :src="filteredBot[0].image" :alt="filteredBot[0].description"/>        
+            <p class="bot-name">{{filteredBot[0].name}}</p>          
+            <p class="bot-date">Created at {{ filteredBot[0].created.substr(0, 10).split('-').reverse().join('/') }}</p>   
+            <div class="clear-both"></div>
+        </div>
+        <div class="line"></div>
+        <div class="row">        
             <div class="box-local col-xl-3">
                 <p>Region and idiom</p>
                 <p>{{filteredBot[0].culture}}</p>
@@ -17,21 +18,33 @@
                 <p>Not informed</p>
             </div>            
             <div class="box-actived-user col-xl-6">
-                <my-image  :src="imageUserSrc" :alt="imageUserAlt"/> 
-                <p class="title">{{filteredBot[0].analytics.user.actived}}</p>
-                <p class="subtitle">Usuários ativos</p>
+                <div class="box-img">
+                    <my-image  :src="imageUserSrc" :alt="imageUserAlt"/> 
+                </div>
+                <div class="box-text">
+                    <p class="title">{{filteredBot[0].analytics.user.actived}}</p>
+                    <p class="subtitle">Usuários ativos</p>
+                </div>
             </div>
             <div class="box-msg-receveid col-xl-6">
-                <my-image  :src="imageReceivedSrc" :alt="imageReceivedAlt"/> 
-                <p class="title">{{filteredBot[0].analytics.message.received}}</p>
-                <p class="subtitle">Mensagens recebidas</p>
+                <div class="box-img">
+                    <my-image  :src="imageReceivedSrc" :alt="imageReceivedAlt"/> 
+                </div>
+                <div class="box-text">
+                    <p class="title">{{filteredBot[0].analytics.message.received}}</p>
+                    <p class="subtitle">Mensagens recebidas</p>
+                </div>   
             </div>
             <div class="box-msg-sent col-xl-3">
-                <my-image  :src="imageSentSrc" :alt="imageSentAlt"/> 
-                <p class="title">{{filteredBot[0].analytics.message.sent}}</p>
-                <p class="subtitle">Mensagens recebidas</p>
+                <div class="box-img">
+                    <my-image  :src="imageSentSrc" :alt="imageSentAlt"/>
+                </div>
+                <div class="box-text">
+                    <p class="title">{{filteredBot[0].analytics.message.sent}}</p>
+                    <p class="subtitle">Mensagens recebidas</p>
+                </div>
             </div>
-            <div class="box-status-account col-xl-2">
+            <div class="box-status-account col-xl-3">
                 <my-image  :src="imageStatusAccSrc" :alt="imageStatusAccAlt"/> 
                 <p class="subtitle">Status Account</p>
                 <p class="title">Free</p>

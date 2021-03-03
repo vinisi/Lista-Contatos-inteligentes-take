@@ -4,38 +4,84 @@
 .home{
     min-height: 600px;
 
-     .header{
-        padding: 30px 50px;
-        .title{
-            color: $titleColor; 
-            font-size: 26px;
-            font-weight: bold;
-            display: inline-block;
-            vertical-align: middle;
+
+    @media (min-width:1025px) {    
+        .header{
+            margin-bottom: 20px;
+            .header-left{
+                float: left;
+            }
+            .header-right{
+                float: right;
+            }
+            .title{
+                color: $titleColor; 
+                font-size: 26px;
+                font-weight: bold;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .input{        
+                padding: .50rem 1rem;
+                color: $titleColor;
+                background-color: #fff;
+                border: 1px solid $titleColor;
+                border-radius: .40rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;       
+                border-color: #ebedf2;
+                margin-left: 5px;
+            }
+            .imageStyle{
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+            .btn{
+                margin-left: 5px;
+            }
         }
-        .input{        
-            padding: .50rem 1rem;
-            color: $titleColor;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid $titleColor;
-            border-radius: .40rem;
-            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;       
-            border-color: #ebedf2;
-            margin-left: 5px;
-        }
-        .imageStyle{
-            display: inline-block;
-            vertical-align: middle;
-            cursor: pointer;
-        }
-        .btn{
-            margin-left: 5px;
-        }
-    } 
+    }
+
+    @media (max-width: 1024px){
+
+        .header{
+            margin-bottom: 20px;
+            .title{
+                color: $titleColor; 
+                font-size: 26px;
+                font-weight: bold;
+                text-align: center;
+                margin: 10px 0;
+            }
+            .input{        
+                padding: .50rem 1rem;
+                color: $titleColor;
+                background-color: #fff;
+                border: 1px solid $titleColor;
+                border-radius: .40rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;       
+                border-color: #ebedf2;
+                margin-left: 5px;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .btn{
+                margin-left: 5px;
+                width: 48%;                
+            }
+
+            .imageStyle{
+                margin: 10px 0;
+                display: inline-block;
+                cursor: pointer;
+                align-items: center;
+            }
+
+        }        
+    }
 
     .list-bot{
-        padding: 30px 50px;
+        margin-top: 30px;
         .title{
             color: $subtitleColor; 
             font-size: 26px;
@@ -43,9 +89,9 @@
             width: 50%;
             display: inline-block;
             vertical-align: middle;       
-            margin: 10px 0; 
         }
         .card-bot-item{
+            margin-top: 30px;
             li{
                 background-color: $whiteColor;
                 height: 200px;
@@ -56,15 +102,27 @@
             }
         }
         .list-bot-item{
-            li{
-                background-color: $whiteColor;
-                height: 75px;
-                margin: 8px;
-                border-radius: 5px;
-                margin-left: 105px;
-                box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
-                
-            } 
+            margin-top: 30px;
+            @media (min-width:1025px) { 
+                li{
+                    background-color: $whiteColor;
+                    height: 75px;
+                    margin: 8px;
+                    border-radius: 5px;
+                    margin-left: 55px;
+                    box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+                }
+            }
+            @media (max-width:1024px) { 
+                li{
+                    background-color: $whiteColor;
+                    height: 75px;
+                    margin: 8px;
+                    border-radius: 5px;
+                    margin-left: 30px;
+                    box-shadow:0 1px 15px 1px rgba(69,65,78,.1);
+                }
+            }            
         }                       
     }    
 

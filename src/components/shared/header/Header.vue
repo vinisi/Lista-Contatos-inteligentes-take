@@ -1,9 +1,9 @@
 <template>    
-        <div class="top">
+        <header class="top">
             <router-link :to="'/'">
               <my-image :classStyle="classStyle" :src="src" :alt="alt"/>
             </router-link>
-        </div>
+        </header>
 </template>
 
 <script>

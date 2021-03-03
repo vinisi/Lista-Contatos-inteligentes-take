@@ -1,7 +1,7 @@
 <template>    
-        <div class="footer">
+        <footer class="footer">
             <p>© 2019, BLIP todos os direitos reservados | Termos de Uso</p>
-        </div>
+        </footer>
 </template>
 
 <script>

@@ -4,6 +4,7 @@
 .list-bot{
 
     .card-bot-item{
+        
         .favorite-icon{
             position: relative;
             left: 10px;
@@ -33,40 +34,77 @@
             font-size: 12px;;       
         }
     }
-
-    .list-bot-item{        
-        .favorite-icon{
-            display: block;
-            float: left;
-            position: relative;
-            top: 27px;
-            left: -65px;
-            cursor: pointer;
-        }                       
-        a{
-            display: block;
-            float: left;
-            margin: 10px auto;
+    @media (min-width:1025px) { 
+        .list-bot-item{        
+            .favorite-icon{
+                display: block;
+                float: left;
+                position: relative;
+                top: 27px;
+                left: -65px;
+                cursor: pointer;
+            }                       
+            a{
+                display: block;
+                float: left;
+                margin: 10px auto;
+            }
+            .bot-img{
+                border-radius: 100%;
+                height: 55px;
+                width: 55px; 
+                display: block;
+            }
+            .bot-name{
+                font-weight: bold;
+                color: $titleColor;
+                float: left;
+                margin: 30px;
+            }
+            .bot-date{        
+                color: $titleColor;    
+                font-size: 12px;
+                float: right;  
+                margin: 30px;  
+            }         
         }
-        .bot-img{
-            border-radius: 100%;
-            height: 55px;
-            width: 55px; 
-            display: block;
-        }
-        .bot-name{
-            font-weight: bold;
-            color: $titleColor;
-            float: left;
-            margin: 30px;
-        }
-        .bot-date{        
-            color: $titleColor;    
-            font-size: 12px;
-            float: right;  
-            margin: 30px;  
-        }         
     }
+    @media (max-width:1024px) { 
+        .list-bot-item{        
+            .favorite-icon{
+                display: block;
+                float: left;
+                position: relative;
+                top: 27px;
+                left: -30px;
+                cursor: pointer;
+            }                       
+            a{
+                display: block;
+                float: left;
+                margin: 10px auto;
+            }
+            .bot-img{
+                border-radius: 100%;
+                height: 55px;
+                width: 55px; 
+                display: block;
+            }
+            .bot-name{
+                font-weight: bold;
+                color: $titleColor;
+                float: left;
+                margin: 30px 10px;
+                font-size: 12px;
+            }
+            .bot-date{        
+                color: $titleColor;    
+                font-size: 12px;
+                float: right;  
+                margin: 30px 10px;  
+            }         
+        }
+    }    
     .line{
         width: 100%;
         border-bottom: 2px solid $subtitleColor;

@@ -1,23 +1,23 @@
 <template>
     <div>                                  
-        <my-top /> 
-        <transition>    
-             <router-view></router-view>
-        </transition>   
-        <my-footer />
-           
-        
+        <my-header /> 
+        <div class="container">        
+            <transition>    
+                <router-view></router-view>
+            </transition>   
+        </div>
+        <my-footer />    
     </div>
 </template>
 
 <script>
 import { routes } from './routes';
-import Top from './components/shared/top/Top';
+import Header from './components/shared/header/Header';
 import Footer from './components/shared/footer/Footer';
 
 export default {
     components:{        
-        'my-top': Top,
+        'my-header': Header,
         'my-footer': Footer,
     },
     data(){

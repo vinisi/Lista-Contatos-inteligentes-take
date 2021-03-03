@@ -1,19 +1,18 @@
 <template>    
     <div class="home">
         <div class="header">
-            <div class="row">
-                <div class="col-xl-6">
-                    <span class="title">{{ title }}</span>
-                </div>
-                <div class="col-xl-6">
-                    <input class="input" type="search" @input="filter = $event.target.value" placeholder="Search" />
-                    <my-button :title="'Order by Name'" :type="'text'"  :class="'btn'" @customClick="orderByName()" />
-                    <my-button :title="'Order by Creation'" :type="'text'"  :class="'btn'" @customClick="orderByCreation()" />
-                    <my-image :class="'imageStyle'" :src="imageCardsSrc" :alt="imageCardsalt" @customClick="showCard()" /> 
-                    <my-image :class="'imageStyle'" :src="imageListsSrc" :alt="imageListalt" @customClick="showList()" />           
-                </div>
+            <div class="header-left">
+                <p class="title">{{ title }}</p>
+            </div>
+            <div class="header-right">
+                <input class="input" type="search" @input="filter = $event.target.value" placeholder="Search" />
+                <my-button :title="'Order by Name'" :type="'text'"  :class="'btn'" @customClick="orderByName()" />
+                <my-button :title="'Order by Creation'" :type="'text'"  :class="'btn'" @customClick="orderByCreation()" />
+                <my-image :class="'imageStyle'" :src="imageCardsSrc" :alt="imageCardsalt" @customClick="showCard()" /> 
+                <my-image :class="'imageStyle'" :src="imageListsSrc" :alt="imageListalt" @customClick="showList()" />           
             </div>
         </div>
+        <div class="clear-both"></div>
         <div class="list-bot">
             <p class="title">Favorities</p>
             <ul :class="botItemClassStyle" class="row">                
