@@ -1,11 +1,17 @@
 <template>    
-    <img :class="classStyle" :src="src" :title="title">
+    <img @click="customClick()" :class="classStyle" :src="src" :title="title">
 </template>
 
 <script>
 
 export default {  
-    props: ['classStyle', 'src', 'title']        
+    props: ['classStyle', 'src', 'title'],
+    methods: {
+
+        customClick() {
+            this.$emit('customClick');
+        }
+    },            
 }
 </script>
 

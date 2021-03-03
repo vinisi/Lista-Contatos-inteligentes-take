@@ -35,8 +35,8 @@
                 <my-image  :src="imageStatusAccSrc" :alt="imageStatusAccAlt"/> 
                 <p class="subtitle">Status Account</p>
                 <p class="title">Free</p>
-                <button :type="buttonType"  :class="buttonStyle" >{{ buttonUpdate }}</button>            
-            </div> 
+                <my-button :title="buttonUpdate" :type="'text'"  :class="'btn'" />                
+            </div>             
         </div>       
         <div class="line"></div>                             
     </div>
@@ -47,11 +47,13 @@
 
 import json from '../../../assets/resources/data.json';
 import Image from '../../shared/image/Image';
+import Button from '../../shared/button/Button';
 
 
 export default{ 
     components:{
         'my-image': Image,
+        'my-button': Button
     },
     data(){
         return{

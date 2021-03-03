@@ -6,11 +6,11 @@
                     <span class="title">{{ title }}</span>
                 </div>
                 <div class="col-xl-6">
-                    <input class="input" type="search" @input="filter = $event.target.value" placeholder="Search">
-                    <button :type="buttonType"  :class="buttonStyle" @click="orderByName()" >{{ buttonOrderByNameTitle }}</button>
-                    <button :type="buttonType"  :class="buttonStyle" @click="orderByCreation()" >{{ buttonOrderByCreationTitle }}</button>            
-                    <img :class="imageStyle" :src="imageCardsSrc" :alt="imageCardsalt" @click="showCard()" /> 
-                    <img :class="imageStyle" :src="imageListsSrc" :alt="imageListalt" @click="showList()" />           
+                    <input class="input" type="search" @input="filter = $event.target.value" placeholder="Search" />
+                    <my-button :title="'Order by Name'" :type="'text'"  :class="'btn'" @customClick="orderByName()" />
+                    <my-button :title="'Order by Creation'" :type="'text'"  :class="'btn'" @customClick="orderByCreation()" />
+                    <my-image :class="'imageStyle'" :src="imageCardsSrc" :alt="imageCardsalt" @customClick="showCard()" /> 
+                    <my-image :class="'imageStyle'" :src="imageListsSrc" :alt="imageListalt" @customClick="showList()" />           
                 </div>
             </div>
         </div>
@@ -41,6 +41,7 @@
 <script>
 
 import Image from '../shared/image/Image';
+import Button from '../shared/button/Button';
 import json from '../../assets/resources/data.json';
 import botCard from '../../components/bot/Bot-card';
 import { routes } from '../../routes';
@@ -49,17 +50,14 @@ export default {
     components:{
         'my-image': Image,
         'my-bot': botCard,
+        'my-button': Button
     },
     data () {
         return {
             title: 'My Chatbots',
             inputType: 'search',
             inputStyle: 'input-class',
-            inputPlaceholder: 'Search',
-            buttonType: 'search',
-            buttonStyle: 'btn',        
-            buttonOrderByNameTitle: 'Order by Name',
-            buttonOrderByCreationTitle: 'Order by Creation',
+            inputPlaceholder: 'Search',   
             imageStyle: 'imageStyle',
             imageCardsSrc: require('../../assets/images/organize-blocks.png'),
             imageCardsalt: 'Show in card mode',
@@ -98,7 +96,7 @@ export default {
         },
         orderByCreation(){
             return this.bots.sort((t1,t2) => t1.created < t2.created ? -1 : 1);
-        }                                    
+        }                                  
     },
     computed:{
         filteredFavoriteBots(){

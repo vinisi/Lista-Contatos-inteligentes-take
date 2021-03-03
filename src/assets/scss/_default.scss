@@ -66,22 +66,7 @@
     margin: 40px 0;
 }   
 
-.btn{
-    color: $whiteColor;
-    font-weight: bold;
-    background-color: $btnColor;
-    border-color: $btnColor;
-    cursor: pointer;        
-    border: 1px solid transparent;
-    padding: .50rem 1rem;
-    border-radius: .40rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;        
-}
 
-.btn:hover{
-    border-color: $btnHoverColor;
-    background-color: $btnHoverColor;  
-}   
 
 
 
