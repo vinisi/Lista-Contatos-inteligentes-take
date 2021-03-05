@@ -2,161 +2,58 @@
 ## _Desafio: Lista de contatos inteligentes_
 
 A lista de contatos inteligentes foi desenvolvida para listar os contatos obtidos através do arquivo data.json fornecido na pasta resourses do projeto.
-Através dessa lista será possível:
 
-- Visualizar os contatos de forma  
-- See HTML in the right
-- ✨Magic ✨
+## Através dessa lista será possível:
 
-## Features
+- Visualizar os contatos de forma  amigável;
+- Adicionar um contato na listagem de favoritos;
+- Alterar a forma de visualização;
+- Ordenar os contatos por ordem alfabética ou por ordem de criação;
+- Realizar ums busca por nome do contato;
+- Visualizar as informações detalhadas de cada contato;
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+## Características
 
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
+- Este projeto foi desenvolvido seguindo todas as especificações listadas no documento de requisitos;
+- Foram empregadas boas práticas de desenvolvimento de software tais como reutilização de código, facilidade de leitura e entendimento, manutenibilidade, escalabilidade, dentro outros;
+- Foi feito deploy do projeto para o microsoft azure - aplicativos Web Estáticos. É possível acessar através deste link: [Lista de Contatos](https://victorious-beach-09405bd10.azurestaticapps.net/);
+- Todo o código fonte se encontra bem documentado e disponível em: [Github Vinícius César](https://github.com/vinisi/my-app/);
+- Pelo fato da pasta do projeto ser pública optei por não disponibilizar os requisitos do desafio;
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
+## Tecnologias
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
+Para o desenvolvimento deste projeto utilizei todas as recomendações do documentos de requisitos e fiz uso as seguintes ferramentas de desenvolvimento:
 
-## Tech
+- [Vue.js](https://vuejs.org/) - The Progressive JavaScript Framework.
+- [Sass](https://sass-lang.com/) - CSS with superpowers.
+- [HTML 5](https://www.w3.org/) - Hypertext Markup Language.
+- [CSS 3](https://www.w3.org/) - Cascading Style Sheets
+- [Visual studio code](https://code.visualstudio.com/) - Code Editing. Redefined
 
-Dillinger uses a number of open source projects to work properly:
+## Instalação
 
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
+Este projeto requer a instalação de [Node.js](https://nodejs.org/) para executar.
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-## Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
+Instação das dependências do projeto
 
 ```sh
-cd dillinger
-npm i
-node app
+npm install -g vue-cli
+npm install vue-resource --save
+npm install vue-router
+npm install sass-loader node-sass --save-dev
 ```
 
-For production environments...
+Instalação do projeto
 
 ```sh
-npm install --production
-NODE_ENV=production node app
+cd my-app
+npm install
 ```
-
-## Plugins
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
-
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
-
-## Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-
+Executar o projeto
 ```sh
-node app
+npm run serve
 ```
 
-Second Tab:
-
-```sh
-gulp watch
-```
-
-(optional) Third:
-
-```sh
-karma test
-```
-
-#### Building for source
-
-For production release:
-
-```sh
-gulp build --prod
-```
-
-Generating pre-built zip archives for distribution:
-
-```sh
-gulp build dist --prod
-```
-
-## Docker
-
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 8080, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
-
-```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
-```
-
-This will create the dillinger image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on
-your host. In this example, we simply map port 8000 of the host to
-port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
-```
-
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
-
-Verify the deployment by navigating to your server address in
-your preferred browser.
-
-```sh
-127.0.0.1:8000
-```
 
 ## License
 
@@ -164,56 +61,3 @@ MIT
 
 **Free Software, Hell Yeah!**
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
-
-
-# Vue Basic
-
-## Project setup
-
-```bash
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```bash
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```bash
-npm run build
-```
-
-### Lints and fixes files
-
-```bash
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
