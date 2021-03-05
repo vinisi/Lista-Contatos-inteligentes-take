@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="favorite-icon" :src="src" @click="isFavorite(bot)">
+        <img class="favorite-icon" :src="src" @click="customClick()">
         <router-link :to="'details/details/'+bot.shortName">
             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        
         </router-link>
@@ -32,13 +32,9 @@ import Image from '../shared/image/Image';
             }
         },
         methods:{
-            isFavorite(bot){
-                if(bot.favorite === undefined){
-                    bot.favorite = 'favorite';
-                }else{
-                    bot.favorite = undefined;
-                }                
-            }        
+        customClick() {
+                this.$emit('customClick');
+            }     
         }
     }
 </script>

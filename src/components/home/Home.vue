@@ -20,6 +20,7 @@
                     <my-bot 
                         :bot="bot"
                         :src="imgStar"
+                        @customClick="isFavorite(bot)"
                     />
                 </li>       
                 <p class="line"></p>  
@@ -27,6 +28,7 @@
                     <my-bot 
                         :bot="bot"
                         :src="imgNotFavorite"
+                        @customClick="isFavorite(bot)"
                     />
                 </li>                       
             </ul>         
@@ -74,6 +76,14 @@ export default {
         }  
     },
     methods:{   
+        isFavorite(bot){
+            if(bot.favorite === undefined){
+                bot.favorite = 'favorite';
+            }else{
+                bot.favorite = undefined;
+            }  
+            this.orderByName();          
+        },         
         showCard(){
             this.botItemClassStyle = 'card-bot-item';
             this.botColStyle = 'col-xl-2';
