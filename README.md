@@ -18,11 +18,11 @@ A lista de contatos inteligentes foi desenvolvida para listar os contatos obtido
 - Foram empregadas boas práticas de desenvolvimento de software tais como reutilização de código, facilidade de leitura e entendimento, manutenibilidade, escalabilidade, dentro outros;
 - Foi feito deploy do projeto para o microsoft azure - aplicativos Web Estáticos. É possível acessar através deste link: [Lista de Contatos](https://victorious-beach-09405bd10.azurestaticapps.net/);
 - Todo o código fonte se encontra bem documentado e disponível em: [Github Vinícius César](https://github.com/vinisi/my-app/);
-- Pelo fato da pasta do projeto ser pública optei por não disponibilizar os requisitos do desafio;
+- Devido ao fato da pasta do projeto ser pública optei por não disponibilizar os requisitos do desafio;
 
 ## Tecnologias
 
-Para o desenvolvimento deste projeto utilizei todas as recomendações do documentos de requisitos e fiz uso as seguintes ferramentas de desenvolvimento:
+Para o desenvolvimento deste projeto utilizei todas as recomendações do documentos de requisitos e fiz uso das seguintes ferramentas de desenvolvimento:
 
 - [Vue.js](https://vuejs.org/) - The Progressive JavaScript Framework.
 - [Sass](https://sass-lang.com/) - CSS with superpowers.
