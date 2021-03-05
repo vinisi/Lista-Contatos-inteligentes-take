@@ -13,9 +13,9 @@
         <div class="row">        
             <div class="box-local col-xl-3">
                 <p>Region and idiom</p>
-                <p>{{filteredBot[0].culture}}</p>
+                <p class="bold">{{filteredBot[0].culture}}</p>
                 <p>Timezone</p>
-                <p>Not informed</p>
+                <p class="bold">(UTC - 03:00) Brasília</p>
             </div>            
             <div class="box-actived-user col-xl-6">
                 <div class="box-img">

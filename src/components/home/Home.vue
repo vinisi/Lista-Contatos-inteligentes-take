@@ -73,15 +73,7 @@ export default {
             imgStar: require('../../assets/images/star.png')                
         }  
     },
-    methods:{
-        isFavorite(bot){
-            if(bot.template == 'master'){
-                bot.template = 'favorite';
-            }else{
-                bot.template = 'master';
-            }
-            
-        },     
+    methods:{   
         showCard(){
             this.botItemClassStyle = 'card-bot-item';
             this.botColStyle = 'col-xl-2';
@@ -102,18 +94,18 @@ export default {
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
                 let filtered = this.bots.filter(bot => exp.test(bot.shortName));
-                return filtered.filter(bot => bot.template === 'favorite');
+                return filtered.filter(bot => bot.favorite === 'favorite');
             }else{
-                return this.bots.filter(bot => bot.template === 'favorite');
+                return this.bots.filter(bot => bot.favorite === 'favorite');
             }
         },
         filteredNotFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
                 let filtered = this.bots.filter(bot => exp.test(bot.shortName));
-                return filtered.filter(bot => bot.template === 'master');
+                return filtered.filter(bot => bot.favorite === undefined);
             }else{
-                return this.bots.filter(bot => bot.template === 'master');
+                return this.bots.filter(bot => bot.favorite === undefined);
             }
         }          
     },

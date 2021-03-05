@@ -33,10 +33,10 @@ import Image from '../shared/image/Image';
         },
         methods:{
             isFavorite(bot){
-                if(bot.template == 'master'){
-                    bot.template = 'favorite';
+                if(bot.favorite === undefined){
+                    bot.favorite = 'favorite';
                 }else{
-                    bot.template = 'master';
+                    bot.favorite = undefined;
                 }                
             }        
         }
