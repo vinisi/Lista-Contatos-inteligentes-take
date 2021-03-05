@@ -9,7 +9,7 @@ A lista de contatos inteligentes foi desenvolvida para listar os contatos obtido
 - Adicionar um contato na listagem de favoritos;
 - Alterar a forma de visualização;
 - Ordenar os contatos por ordem alfabética ou por ordem de criação;
-- Realizar ums busca por nome do contato;
+- Realizar buscas pelo nome do contato;
 - Visualizar as informações detalhadas de cada contato;
 
 ## Características
