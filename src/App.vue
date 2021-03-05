@@ -1,5 +1,6 @@
 <template>
-    <div>                                  
+    <div>      
+        <!-- Componente de visualização padrão do vue -->
         <my-header /> 
         <div class="container">        
             <transition>    

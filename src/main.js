@@ -7,7 +7,7 @@ import { routes } from './routes';
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-
+// Instância do componente rotas para trabalhar com links no vue
 const router = new VueRouter({
   routes,
   mode: 'history'
