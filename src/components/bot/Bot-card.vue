@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- Componente que define a estrutura padrão de um bot -->
         <img class="favorite-icon" :src="src" @click="customClick()">
         <router-link :to="'details/details/'+bot.shortName">
             <my-image class="bot-img" :src="bot.image" :alt="bot.description"/>                        

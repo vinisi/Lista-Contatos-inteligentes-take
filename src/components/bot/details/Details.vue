@@ -1,4 +1,5 @@
 <template>
+    <!-- Componente responsável por exibir as informações detalhadas do bot -->
     <div class="details">        
         <div class="header">   
             <div class="bot-id">
@@ -86,6 +87,7 @@ export default{
         }
     },
     computed:{
+        // Método que retorna qual bot foi clicado
         filteredBot(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');

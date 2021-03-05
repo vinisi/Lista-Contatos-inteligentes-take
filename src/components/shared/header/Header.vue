@@ -1,4 +1,5 @@
 <template>    
+        <!-- Componente header, exibe a logo e o topo do site -->
         <header class="top">
             <router-link :to="'/'">
               <my-image :classStyle="classStyle" :src="src" :alt="alt"/>

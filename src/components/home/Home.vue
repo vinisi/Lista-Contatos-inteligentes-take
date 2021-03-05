@@ -1,4 +1,5 @@
 <template>    
+    <!-- componente home reponsável exibir o input de busca, botões de busca e opção de ordenação -->
     <div class="home">
         <div class="header">
             <div class="header-left">
@@ -76,6 +77,7 @@ export default {
         }  
     },
     methods:{   
+        // Método para verificar e definir se um bot é favorito ou não
         isFavorite(bot){
             if(bot.favorite === undefined){
                 bot.favorite = 'favorite';
@@ -84,22 +86,27 @@ export default {
             }  
             this.orderByName();          
         },         
+        // Método para trocar a classe e exibir os bots em forma de box
         showCard(){
             this.botItemClassStyle = 'card-bot-item';
             this.botColStyle = 'col-xl-2';
         },
+        // Método para trocar a classe e exibir os bots em forma de lista
         showList(){
             this.botItemClassStyle = 'list-bot-item';
             this.botColStyle = 'col-xl-11';
         },    
+        // Ordena os bots por nome
         orderByName(){
             return this.bots.sort((t1,t2) => t1.name.toLowerCase() < t2.name.toLowerCase() ? -1 : 1);
         },
+        // ordena os bots por ordem de criação
         orderByCreation(){
             return this.bots.sort((t1,t2) => t1.created < t2.created ? -1 : 1);
         }                                  
     },
     computed:{
+        // Carrega todos os bots definidos como favoritos
         filteredFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
@@ -109,6 +116,7 @@ export default {
                 return this.bots.filter(bot => bot.favorite === 'favorite');
             }
         },
+        // Carrega todos os bots definidos não favoritos
         filteredNotFavoriteBots(){
             if(this.filter){
                 let exp = new RegExp(this.filter.trim(), 'i');
