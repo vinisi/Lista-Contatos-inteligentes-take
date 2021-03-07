@@ -41,7 +41,7 @@ Instação das dependências do projeto
 npm install -g vue-cli
 npm install vue-resource --save
 npm install vue-router
-npm install sass-loader node-sass --save-dev
+npm install sass-loader@10.1.1 node-sass --save-dev
 ```
 
 Instalação do projeto
